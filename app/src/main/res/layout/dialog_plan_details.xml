@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txtEnterDetails"
+        android:text="Enter Details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_margin="20dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Training Name"
+        android:layout_below="@id/txtEnterDetails"
+        android:id="@+id/txtTrainingName"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How much time do you have in mind?"
+        android:layout_below="@id/txtTrainingName"
+        android:id="@+id/txtHowMuch"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtTxtMinutes"
+        android:hint="minutes"
+        android:layout_below="@id/txtHowMuch"
+        android:layout_centerHorizontal="true"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtSelectTheDay"
+        android:layout_below="@id/edtTxtMinutes"
+        android:text="Select the Day:"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/spinner"
+        android:layout_below="@id/txtSelectTheDay"
+        android:entries="@array/days"
+
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinner"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
+        >
+
+        <Button
+            android:id="@+id/btnDismiss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dismiss"
+            />
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:layout_marginStart="30dp"
+            android:layout_toRightOf="@id/btnDismiss"
+            />
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>
