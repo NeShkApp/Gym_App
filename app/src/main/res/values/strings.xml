@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Gym_App</string>
+    <string name="app_name">Train Yourself</string>
     <array name="days">
         <item>Monday</item>
         <item>Tuesday</item>
