@@ -1,10 +1,10 @@
 package com.example.gym_app;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class WebActivity extends AppCompatActivity {
     private WebView webView;
@@ -17,7 +17,7 @@ public class WebActivity extends AppCompatActivity {
         webView = findViewById(R.id.webView);
         webView.setWebViewClient(new WebViewClient());
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl("https://www.artstation.com/bohdan_nazar");
+        webView.loadUrl("https://github.com/NeShkApp");
 
     }
 
