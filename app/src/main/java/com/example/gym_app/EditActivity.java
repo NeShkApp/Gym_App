@@ -1,9 +1,5 @@
 package com.example.gym_app;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -81,7 +81,7 @@ public class EditActivity extends AppCompatActivity implements PlanAdapter.Remov
     @Override
     public void onRemovePlanResult(Plan plan) {
         if(Utils.removePlan(plan)){
-            Toast.makeText(this, "You removed the training from your plan", Toast.LENGTH_LONG);
+            Toast.makeText(this, "You removed the training from your plan", Toast.LENGTH_LONG).show();
             adapter.setPlans(getPlansByDay(plan.getDay()));
         }
     }

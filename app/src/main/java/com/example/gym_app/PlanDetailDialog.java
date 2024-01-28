@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -53,17 +54,41 @@ public class PlanDetailDialog extends DialogFragment {
                     @Override
                     public void onClick(View view) {
                         String day = spinnerDay.getSelectedItem().toString();
-                        int minutes = Integer.valueOf(edtTxtMinutes.getText().toString());
-                        Plan plan = new Plan(training, minutes, day, false);
+//                        int minutes = Integer.valueOf(edtTxtMinutes.getText().toString());
+//                        Plan plan = new Plan(training, minutes, day, false);
+//                        try {
+//                            passPlanInterface = (PassPlanInterface) getActivity();
+//                            passPlanInterface.getPlan(plan);
+//                            dismiss();
+//                        }catch (ClassCastException e){
+//                            e.printStackTrace();
+//                            dismiss();
+//                        }
 
                         try {
-                            passPlanInterface = (PassPlanInterface) getActivity();
-                            passPlanInterface.getPlan(plan);
-                            dismiss();
-                        }catch (ClassCastException e){
-                            e.printStackTrace();
+                            int minutes = Integer.valueOf(edtTxtMinutes.getText().toString());
+                            if(minutes<=0 || minutes > 60){
+                                Toast.makeText(getContext(), "Input a number between 0 and 60", Toast.LENGTH_LONG).show();
+                                dismiss();
+                            }
+                            else {
+                                Plan plan = new Plan(training, minutes, day, false);
+                                try {
+                                    passPlanInterface = (PassPlanInterface) getActivity();
+                                    passPlanInterface.getPlan(plan);
+                                    dismiss();
+                                } catch (ClassCastException e) {
+                                    e.printStackTrace();
+                                    dismiss();
+                                }
+                            }
+                        }catch (NumberFormatException e){
+                            Toast.makeText(getContext(), "Input a valid number", Toast.LENGTH_LONG).show();
                             dismiss();
                         }
+
+
+
                     }
                 });
             }
